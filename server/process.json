@@ -1,0 +1,9 @@
+{
+	"apps": [{
+		"name": "jiaoluo",
+		"script": "app.js",
+		// "error_file": "/var/log/jiaoluo/pm2-err.log",
+		// "out_file": "/var/log/jiaoluo/pm2-out.log",
+		// "log_date_format": "YYYY-MM-DD HH:mm Z"
+	}]
+}
