@@ -22,10 +22,7 @@
 				<img v-if="article.imageurl" :src="article.imageurl">
 				<p v-for="text in texts">{{ text }}</p>
 		</section>
-		<div class="zhan">
-			<p>探索角落的秘密</p>
-			<img src="@/assets/evlop.png">
-		</div>
+		<zhan v-if="article.corner" style="background: none" :cornerid="article.corner.cornerid"></zhan>
 		<section class="comment" id="comment">
 			<header class="comment-header">
 				<h2 class="comment-title">
@@ -33,7 +30,7 @@
 				</h2>
 			</header>
 			<list-load class="comment-list" :page.sync="page" :size="10" :list-add="comments" @loadMore="getComments" style="margin-bottom: 20px;">
-				<comment-item slot-scope="props" :comment="props.item"></comment-item>
+				<comment-item slot-scope="props" :comment="props.item" style="margin-bottom: 2px;"></comment-item>
 			</list-load>
 			<div class="more-box"></div>
 		</section>
@@ -49,6 +46,7 @@
 	import UserHead from '@/components/tmpls/UserHead'
 	import CommentItem from '@/components/CommentItem'
 	import CommentInput from '@/components/CommentInput'
+	import Zhan from '@/components/Zhan'
 
 	export default {
 		data() {
@@ -65,7 +63,7 @@
 				else return []
 			}
 		},
-		components: { UserHead, CommentItem, ListLoad, CommentInput },
+		components: { UserHead, CommentItem, ListLoad, CommentInput, Zhan },
 		methods: {
 			getComments () {
 				this.$store.dispatch('GET_COMMENTS', {
@@ -100,7 +98,7 @@
 		}
 	}
 </script>
-<style type="text/css">
+<style>
 	.xny-h2{
 		font-size: 18px;
 		line-height: 30px;
@@ -184,12 +182,13 @@
 
 	/* comment */
 	.comment{
-
+		border-top: 1px solid #ddd;
 	}
 	.comment-header{
 		overflow: hidden;
 		line-height: 32px;
 		background-color: #fff;
+		border-bottom: 1px solid #ddd;
 	}
 	.comment-header .like-box{
 		float: right;
@@ -270,14 +269,5 @@
 		text-align: center;
 		line-height: 40px;
 		font-size: 14px;
-	}
-	.zhan{
-		text-align: center;
-		background-color: #fff;
-	}
-	.zhan span{
-		font-size: 16px;
-		display: inline-block;
-		line-height: 30px;
 	}
 </style>

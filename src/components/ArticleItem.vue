@@ -16,12 +16,12 @@
 						<span class="xny-cor-name">{{ article.corner.name }}</span>
 						<span class="xny-cor-address">{{ article.corner.placeaddress }}</span>
 					</router-link>
-					<div class="xny-msg">
+					<div class="xny-msg" style="margin: 0">
 						<span class="xny-msg-item">{{ getFullDate(article.created) }}</span>
 					</div>
 				</div>
 			</div>
-			<ul class="xny-icon-list">
+			<ul v-if="hasicon" class="xny-icon-list">
 				<li>
 					<div class="xny-icon">
 						<img src="@/assets/yuedu.png"><span>{{ article.readtime }}</span>
@@ -68,9 +68,8 @@
 			},
 			commentLink () {
 				return {
-					path: '/detail#comment',
+					path: '/detail/'+ this.article.articleid +'#comment',
 					params: {
-						id: this.article.author.articleid,
 						tocomment: true
 					}
 				}
@@ -85,6 +84,10 @@
 				}
 			},
 			hascorner: {
+				type: Boolean,
+				default: true
+			},
+			hasicon: {
 				type: Boolean,
 				default: true
 			}

@@ -9,6 +9,8 @@ const User = r => require.ensure([], () => r(require('@/pages/tabbar/user/User')
 const Login = r => require.ensure([], () => r(require('@/pages/login/Login')), 'Login')
 const Publish = r => require.ensure([], () => r(require('@/pages/publish/Publish')), 'Publish')
 const Detail = r => require.ensure([], () => r(require('@/pages/detail/Detail')), 'Detail')
+const Secret = r => require.ensure([], () => r(require('@/pages/secret/Secret')), 'Secret')
+const SecretCreate = r => require.ensure([], () => r(require('@/pages/secret/SecretCreate')), 'SecretCreate')
 
 Vue.use(Router)
 
@@ -71,6 +73,22 @@ export default new Router({
       path: '/detail/:id',
       name: 'Detail',
       component: Detail,
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
+      path: '/secret',
+      name: 'Secret',
+      component: Secret,
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
+      path: '/secret/create',
+      name: 'SecretCreate',
+      component: SecretCreate,
       meta: {
         requireAuth: true
       }

@@ -4,14 +4,14 @@
 			<x-textarea style="margin: 0;" :height="150" @on-change="textChange"></x-textarea>
 		</group>
 		<group>
-			<image-cut v-model="imageurl"></image-cut>
+			<image-cut v-model="imageurl" style="width: 120px; height: 80px; margin: 5px 10px;"></image-cut>
 		</group>
 		<group>
 			<cell title="标题">
 				<img slot="icon" src="@/assets/biaoti.png" style="width: 20px; height: 20px; margin: 0 5px -2px 0;">
 				<input slot="child" style="height: 100%; font-size: 16px;" @input="titleChange"></input>
 			</cell>
-			<cell title="角落所在的位置" class="choosePosition">
+			<cell :title="address" class="choosePosition">
 				<img slot="icon" src="@/assets/dizhi2.png" style="width: 20px; height: 20px; margin: 0 5px -2px 0;">
 			</cell>
 			<cell title="圈子">
@@ -51,7 +51,8 @@
 					imageurl: ''
 				},
 				imageurl: '',
-				cp: false
+				cp: false,
+				address: '角落所在的位置'
 			}
 		},
 		components: {Cell, Group, XTextarea, XInput, Checker, CheckerItem, ImageCut, LocalPosition},
@@ -72,6 +73,7 @@
 			getPosition (position) {
 				Object.assign(this.form, position)
 				console.log(this.form)
+				this.address = position.placename;
 			},
 			publish () {
 				this.$http.post('/api/article/inter/distribute', this.stringfy(this.form), {

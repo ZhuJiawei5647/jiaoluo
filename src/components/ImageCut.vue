@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<div class="img-box" :style="[boxstyle]">
+		<div class="imgcut-img-box" :style="[boxstyle]">
 			<img v-show="value" :src="value" @load="imgload">
-			<input class="file-input" type="file" @click="chooseImage" @change="previewImage">
+			<input class="imgcut-file-input" type="file" @click="chooseImage" @change="previewImage">
 		</div>
 		<crop v-model="cropshow" :orientation="orientation" :url="cropurl" :aspect-ratio="1.5" @cancel="" @crop="crop"></crop>
 	</div>
@@ -54,10 +54,6 @@
 									this.cropshow = true;
 								}
 							});
-							// } else {
-							// 	this.cropurl = res.localIds[0];
-							// 	this.cropshow = true; 
-							// }
 						},
 						fail: (res) => {
 							this.$vux.loading.hide()
@@ -94,7 +90,8 @@
 				        file: url
 				    },
 				    success: (data) => {
-				        this.$emit('input', data.url)
+				    	var d = JSON.parse(data)
+				        this.$emit('input', d.url)
 				    },
 				    error: function(XMLHttpRequest, textStatus, errorThrown) {
 				        alert("上传失败，请检查网络后重试");
@@ -104,20 +101,20 @@
 		}
 	}
 </script>
-<style scoped>
-	.img-box{
-		padding: 5px 10px;
+<style>
+	.imgcut-img-box{
+		padding: 0;
+		width: 100%;
+		height: 100%;
 		background-color:#fff;
-		width: 120px;
-		height: 80px;
 		position: relative;
 	}
-	.img-box img{
+	.imgcut-img-box img{
 		width: 100%;
 		height: 100%;
 		display: inline-block;
 	}
-	.file-input{
+	.imgcut-file-input{
 		position: absolute;
 		top: 0;
 		left: 0;
