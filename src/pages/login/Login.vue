@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="page-login">
 		<div class="img-box">
 			<img src="@/assets/logo.png">
 		</div>
@@ -85,7 +85,8 @@
 		}
 	}
 </script>
-<style>
+<style lang="less">
+.page-login {
 	.img-box{
 		text-align: center;
 		padding-top: 40px;
@@ -103,4 +104,5 @@
 		display: inline-block;
 		height: 100%;
 	}
+}
 </style>

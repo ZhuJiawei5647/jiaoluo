@@ -1,17 +1,21 @@
 <template>
-	<div class="img-box">
+	<div class="user-head">
 		<router-link class="img-contener" :to="link" :style="{width: size, height: size}">
-			<img :src="imgurl? imgurl : headimg">
+			<x-img v-if="imgurl && container" :src="imgurl" :default-src="headimg" :container="container" error-class="img-unload"></x-img>
+			<img v-else :src="imgurl? imgurl : headimg">
 		</router-link>
 	</div>
 </template>
 <script>
+	import { XImg } from 'vux'
+
 	export default {
 		data () {
 			return {
 				headimg: require('@/assets/userhead.png')
 			}
 		},
+		components: { XImg },
 		computed: {
 			link () {
 				if (this.haslink) {
@@ -51,17 +55,25 @@
 			size: {
 				type: String,
 				default: '50px'
+			},
+			container: {
+				type: String,
+				default: null
 			}
 		},
 		created () {
 		}
 	}
 </script>
-<style scoped>
-	.img-box{
-		padding: 10px;
+<style lang="less">
+.user-head{
+	padding: 10px;
+
+	.img-unload {
+		background: url('../../assets/userhead.png') 0 0 no-repeat;
+		background-size: 100% 100%;
 	}
-	.img-contener{
+	.img-contener {
 		display: block;
 		margin: 0 auto;
 		border-radius: 50%;
@@ -72,4 +84,5 @@
 	    width: 100%;
 	    height: 100%;
 	}
+}
 </style>

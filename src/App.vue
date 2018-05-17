@@ -23,6 +23,7 @@ export default {
 @import '~vux/src/styles/reset.less';
 
 body{
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   background-color: #f2f2f2;
 }
 </style>

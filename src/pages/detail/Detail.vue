@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="page-detail">
 		<header class="header">
-			<div class="xny-item" v-if="article.author">
+			<div v-if="article.author">
 				<user-head style="float:left" :userid="article.author.userid" :imgurl="article.author.userheadimageurl" haslink></user-head>
 				<div class="xny-item-body">
 					<div class="xny-art">
@@ -98,7 +98,8 @@
 		}
 	}
 </script>
-<style>
+<style lang="less">
+.page-detail{
 	.xny-h2{
 		font-size: 18px;
 		line-height: 30px;
@@ -126,20 +127,51 @@
 		background-color: white;
 	}
 	.header .xny-art{
-		height: auto;
+		position: relative;
+		padding-top: 12px;
+		padding-right: 120px;
 		border: none;
 	}
 	.header .xny-art-title{
+        font-size: 16px;
+        line-height: 26px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
 		color: #2650ae;
 	}
 	.header .xny-cor-content{
 		line-height: 24px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
 	}
 	.header .xny-cor-content img{
 		height: 18px;
+        vertical-align: middle;
+        margin-top: -4px;
 	}
-	.header .xny-cor-content .xny-cor-name{
+
+
+    .header .xny-cor-content .xny-cor-name {
+        padding: 0 5px;
+        max-width: 100px;
+        font-size: 14px;
 		line-height: 24px;
+        color: #000;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .header .xny-cor-content .xny-cor-address {
+        font-size: 12px;
+        vertical-align: baseline;
+    }
+
+	.header .xny-msg {
+	    padding-left: 10px;
+	    margin-top: 10px;
 	}
 	.button-box{
 		position: absolute;
@@ -211,63 +243,11 @@
 	.comment-title .comment-title-msg i{
 		font-style: normal;
 	}
-	/* comment-item */
-	.comment-item{
-		padding-bottom: 10px;
-	}
-	.comment-item .xny-user-img{
-		padding: 11px;
-	}
-	.comment-item .xny-user-img img{
-		width: 40px;
-		height: 40px;
-	}
-	.comment-item .xny-art{
-		border:none;
-		height: auto;
-		padding-right: 2px;
-		line-height: 36px;
-	}
-	.comment-item .xny-art .xny-art-title{
-		color: #2650ae;
-	}
-	.comment-item .zan-box .xny-icon{
-		float: right;
-	}
-	.comment-item .zan-box .xny-icon span{
-		margin-right: 5px;
-	}
-	.comment-item .zan-box .xny-icon img{
-		height: 14px;
-		margin-top: -5px;
-	}
-	.comment-item .xny-art-title{
-		font-size: 14px;
-		line-height: 36px;
-	}
-	.comment-item .xny-comment{
-
-	}
-	.comment-item .xny-comment .xny-comment-content{
-		font-size: 14px;
-		line-height: 18px;
-	}
-	.comment-item .xny-reply{
-		margin-top: 10px;
-		width: 200px;
-		padding: 5px 14px;
-		background-color: #f6e4e5;
-	}
-	.comment-item .xny-reply li{
-		font-size: 14px;
-		line-height: 20px;
-	}
-	.comment-item .xny-reply .xny-reply-username{
-		color: #2650ae;
-	}
+	
 	.more{
 		text-align: center;
 		line-height: 40px;
 		font-size: 14px;
 	}
+}
 </style>

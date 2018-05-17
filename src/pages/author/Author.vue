@@ -1,5 +1,5 @@
 <template>
-	<div class="page-comment">
+	<div class="page-author">
 		
 	</div>
 </template>
@@ -13,7 +13,7 @@
 	}
 </script>
 <style lang="less">
-.page-comment {
+.page-author {
 
 }
 </style>

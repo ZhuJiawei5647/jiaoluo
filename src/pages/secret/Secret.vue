@@ -1,5 +1,5 @@
 <template>
-	<section class="secret">
+	<section class="page-secret">
 		<!-- <button style="position: absolute; top: 0; right: 0; width: 40px; height: 40px; background: url(../images/cancel.png) center center no-repeat; background-size: 30px 30px;" data-event="close"></button> -->
 		<div class="box">
 			<div class="secret-dec">
@@ -56,55 +56,55 @@
 		}
 	}
 </script>
-<style>
-	.secret {
-		width: 100%; 
-		box-sizing: border-box; 
-		padding: 0 20px; 
-		height: 100%; 
-		background-color: #ccc; 
-		background: url(../../assets/bj-gezi.png) left top repeat; 
-		background-size: 90%; 
-		overflow: hidden;
-	}
-	.secret .box {
+<style lang="less">
+.page-secret {
+	width: 100%; 
+	box-sizing: border-box; 
+	padding: 0 20px; 
+	height: 100%; 
+	background-color: #ccc; 
+	background: url(../../assets/bj-gezi.png) left top repeat; 
+	background-size: 90%; 
+	overflow: hidden;
+
+	.box {
 		margin: 100px auto; 
 		max-width: 260px; 
 		padding: 30px 15px; 
 		background-color: #fff; 
 		border-radius: 5px;
 	}
-	.secret .secret-dec{
+	.secret-dec{
 		overflow: hidden;
 	}
-	.secret .secret-dec h4 {
+	.secret-dec h4 {
 		font-size: 18px; 
 		font-family: 'Segoe Print'; 
 		font-style: italic;
 	}
-	.secret .secret-dec p {
+	.secret-dec p {
 		padding: 10px 30px; 
 		font-size: 17px; 
 		font-family: 'PingFang SC Medium';
 	}
-	.secret .secret-dec span {
+	.secret-dec span {
 		float: right; 
 		font-size: 18px;
 	}
-	.secret .secret-img {
+	.secret-img {
 		margin: 15px 0; 
 		position: relative; 
 		box-sizing: border-box; 
 		border: 2px solid #2da297;
 	}
-	.secret .secret-img-box {
+	.secret-img-box {
 		height: 140px; 
 		overflow: hidden;
 	}
-	.secret .secret-img-box img {
+	.secret-img-box img {
 		width: 100%;
 	}
-	.secret .secret-img i{
+	.secret-img i{
 		position: absolute; 
 		top:-10px; 
 		left: -2px; 
@@ -113,16 +113,16 @@
 		background: url(../../assets/ltsanjiao.png) 0 0 no-repeat; 
 		background-size: 100% 100%;
 	}
-	.secret .button-list {
+	.button-list {
 		overflow: hidden; 
 		width: 80%; 
 		margin: auto;
 	}
-	.secret .button-list li {
+	.button-list li {
 		float: left; 
 		width: 50%;
 	}
-	.secret .button-list li button {
+	.button-list li button {
 		display: block; 
 		margin: 0 auto; 
 		width: 60px; 
@@ -132,4 +132,6 @@
 		background-color: #d76e53; 
 		border-radius: 4px;
 	}
+}
+	
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div >
+	<div class="page-quan quan">
 		<tab active-color="#00b0ff" bar-active-color="#00b0ff" v-model="tabIndex">
 			<tab-item selected>我的</tab-item>
 			<tab-item>发现</tab-item>
@@ -138,7 +138,8 @@
         })()
 	}
 </script>
-<style scoped>
+<style lang="less">
+.page-quan {
 	.slide-down-enter-active, .slide-down-leave-active {
 	  	transition: height .5s;
 		height: 110px;
@@ -185,4 +186,5 @@
 		top: 44px;
 		left: 0;
 	}
+}
 </style>

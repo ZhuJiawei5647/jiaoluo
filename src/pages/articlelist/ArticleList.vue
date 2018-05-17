@@ -1,5 +1,5 @@
 <template>
-	<div class="page-comment">
+	<div class="page-article-list">
 		
 	</div>
 </template>
@@ -7,13 +7,13 @@
 	export default {
 		data() {
 			return {
-
+				
 			}
 		}
 	}
 </script>
 <style lang="less">
-.page-comment {
+.page-article-list {
 
 }
 </style>

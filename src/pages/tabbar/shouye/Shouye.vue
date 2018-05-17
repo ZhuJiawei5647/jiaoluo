@@ -1,8 +1,8 @@
 <template>
-	<div>
+	<div class="page-shouye">
 		<swiper :list="images" :auto="true" :aspect-ratio="0.64"></swiper>
 		<list-load :page.sync="page" :size="size" :list-add="articles" @loadMore="getArticles" style="margin-bottom: 20px;">
-			<article-item slot-scope="props" :article="props.item" style="margin: 6px 0;"></article-item>
+			<article-item slot-scope="props" :article="props.item" style="margin: 6px 0;" container=".page-shouye"></article-item>
 		</list-load>
 	</div>
 </template>

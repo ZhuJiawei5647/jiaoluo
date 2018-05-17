@@ -1,5 +1,5 @@
 <template>
-	<div style="height: 100%; width: 100%; overflow: hidden;">
+	<div class="page-publish">
 		<group>
 			<x-textarea style="margin: 0;" :height="150" @on-change="textChange"></x-textarea>
 		</group>
@@ -145,7 +145,12 @@
 		}
 	}
 </script>
-<style socped>
+<style lang="less">
+.page-publish {
+	height: 100%; 
+	width: 100%; 
+	overflow: hidden;
+	
 	.footer {
 		position: static;
 		height: 40px;
@@ -171,7 +176,6 @@
 
 
 
-	/* */
 	.checker-default{
 		padding: 0 5px;
 		height: 20px;
@@ -196,133 +200,5 @@
 		border-color: #fe0000;
 		color: #fe0000;
 	}
-	/* form */
-	.xny-form-item{
-		display: block;
-		width: 100%;
-		position: relative;
-		overflow: hidden;
-		padding: 8px 0;
-		border-top: 1px solid #ddd;
-		background-color: #fff;
-	}
-	.xny-item-img{
-		width: 55px;
-		text-align: center;
-	}
-	.xny-item-img img{
-		width: 30px;
-		height: 30px;
-	}
-	.xny-form-item .xny-label{
-		float: left;
-		width: 100px;
-		font-size: 16px;
-		line-height: 30px;
-		text-align: left;
-		overflow: hidden;
-	}
-	.xny-form-item .xny-label{
-		vertical-align: top;
-	}
-	.xny-form-item .xny-label .xny-item-img{
-		display: inline-block;
-		height: 30px;
-		line-height: 30px;
-		vertical-align: top;
-	}
-	.xny-form-item .xny-input-block{
-		margin-left: 100px;
-		line-height: 30px;
-		font-size: 16px;
-		position: relative;
-	}
-	.xny-input-block input{
-		width: 90%;
-		height: 30px;
-		padding: 0 5px;
-		font-size: 16px;
-		line-height: 30px;
-	}
-
-	
-
-	/*  */
-	.textarea-box{
-		width: 100%;
-		height: 180px;
-		background-color:#fff;
-	}
-	textarea{
-		box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		width: 100%;
-		height: 100%;
-		padding: 5px 10px;
-		font-size: 16px;
-		line-height: 24px;
-	}
-
-	.radio-box{
-		display: block;
-		position: relative;
-		margin: 0 5px;
-		float: left;
-	}
-	.radio-box input{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		padding: 0;
-		margin: 0;
-		opacity: 0;
-		z-index: 10;
-	}
-	.radio-box span{
-		display: inline-block;
-		padding: 0 5px;
-		height: 20px;
-		margin: 4px 0;
-		color: #aaa;
-		font-size: 0.9rem;
-		line-height: 20px;
-		text-align: center;
-		border: 1px solid #aaa;
-		border-radius: 3px;
-	}
-	.radio-box span.default{
-		border-color: green;
-		color: green;
-	}
-	.radio-box input:checked+span{
-		border-color: #fe0000;
-		color: #fe0000;
-	}
-
-	.btn-container{
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 40px;
-		z-index: 10000;
-	}
-	.btn-list{
-		display: flex;
-		width: 100%;
-		height: 100%;
-	}
-	.btn-list li.xny-btn-box{
-		flex: 1;
-		border-radius: 0;
-		line-height: 40px;
-		height: 40px;
-	}
-	.btn-list li.xny-btn-box .xny-button{
-		font-size: 18px;
-		border-radius: 0;
-	}
+}
 </style>

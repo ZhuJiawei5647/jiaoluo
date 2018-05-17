@@ -1,5 +1,5 @@
 <template>
-	<div class="secret-create">
+	<div class="page-secret-create">
 		<div class="box">
 			<form class="" onsubmit="return false;">
 				<div class="textarea-box">
@@ -72,15 +72,15 @@
 		}
 	}
 </script>
-<style>
-	.secret-create {
-		width: 100%;
-		height: 100%;
-		background: url(../../assets/bj-gezi.png) top left repeat;
-		background-size: 90%;
-		overflow: hidden;
-	}
-	.secret-create .box {
+<style lang="less">
+.page-secret-create {
+	width: 100%;
+	height: 100%;
+	background: url(../../assets/bj-gezi.png) top left repeat;
+	background-size: 90%;
+	overflow: hidden;
+
+	.box {
 		width: 80%;
 		max-width: 300px;
 		margin: 100px auto 0;
@@ -88,7 +88,7 @@
 		background-color: #fff;
 		border-radius: 5px;
 	}
-	.secret-create .textarea-box textarea{
+	.textarea-box textarea{
 		box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
@@ -100,7 +100,7 @@
 		background-color: #fff;
 	}
 
-	.secret-create .img-box{
+	.img-box{
 		padding: 0;
 		position: relative;
 		margin: 10px;
@@ -112,16 +112,16 @@
 		border: 2px solid #2da297;
 	}
 
-	.secret-create .img-box .img-container{
+	.img-box .img-container{
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
 	}
-	.secret-create .img-box .img-container img{
+	.img-box .img-container img{
 		width: 100%;
 	}
 
-	.secret-create .img-box .icon {
+	.img-box .icon {
 		position: absolute; 
 		top:-10px; 
 		left: -2px; 
@@ -131,11 +131,11 @@
 		background-size: 100% 100%;
 	}
 
-	.secret-create .button-list {
+	.button-list {
 		overflow: hidden;
 	}
 
-	.secret-create .button-list li {
+	.button-list li {
 		float: left;
 		width: 50%;
 		height: 50px;
@@ -144,41 +144,42 @@
 		background-size: 95px 50px;
 	}
 
-	.secret-create .save {
+	.save {
 		background-image: url(../../assets/cai_btn1.png)
 	}
 
-	.secret-create .send {
+	.send {
 		background-image: url(../../assets/cai_btn2.png)
 	}
 
-	.secret-create .article-box{
+	.article-box{
 		margin: 20px 40px;
 		text-align: center;
 	}
 
-	.secret-create .article-box span{
+	.article-box span{
 		display: inline-block;
 		padding: 0 10px;
 		font-size: 18px;
 		line-height: 20px;
 	}
 
-	.secret-create .btn-container{
+	.btn-container{
 		position: absolute;
 		left: 0;
 		bottom: 0;
 		width: 100%;
 	}
-	.secret-create .btn-container .xny-btn-box{
+	.btn-container .xny-btn-box{
 		line-height: 40px;
 		width: 100%;
 		height: 40px;
 	}
-	.secret-create .btn-container .xny-btn-box .xny-button{
+	.btn-container .xny-btn-box .xny-button{
 		border-radius: 0;
 		color: #333;
 		background: url(../../assets/cai2_fabu.png) 0 0 no-repeat;
 		background-size: 100% 100%;
 	}
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div style="height: 100%">
+	<div class="page-fujin" style="height: 100%">
 		<header class="header" style="height: 7%">
 			<div class="header-left">
 			    <button class="location">
@@ -25,10 +25,10 @@
 				</swiper-item>
 			</swiper>
 		</section>
-		<section v-else style="height: 93%; overflow:scroll;">
+		<section v-else class="fujin-tab2" style="height: 93%; overflow:scroll;">
 			<ul>
 				<li v-for="(item, index) in articles" :key="index" style="margin: 10px 0">
-					<article-item :article="item" :hasicon="false"></article-item>
+					<article-item :article="item" :hasicon="false" container=".fujin-tab2"></article-item>
 					<zhan :cornerid="item.corner.cornerid" style="border-top: 1px solid #ddd"></zhan>
 				</li>
 			</ul>
@@ -112,7 +112,8 @@
         })()
 	}
 </script>
-<style>
+<style lang="less">
+.page-fujin{
 	.header{
 	    position: relative;
 	    background-color: #fff;
@@ -184,4 +185,5 @@
 	    color: #eee;
 	    text-align: center;
 	}
+}
 </style>

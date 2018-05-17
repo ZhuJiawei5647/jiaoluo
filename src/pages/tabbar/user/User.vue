@@ -1,5 +1,5 @@
 <template>
-	<div class="bb">
+	<div class="page-user">
 		<header>
 		    <div class="xny-item">
 		        <div class="xny-user-img">
@@ -163,15 +163,31 @@
         })()
 	}
 </script>
-<style scoped>
-    .bb{
-    	width: 100%;
-    	height: 100%;
-        background-color: #f2f2f2;
-        overflow-y: scroll;
+<style lang="less">
+.page-user{
+	width: 100%;
+	height: 100%;
+    background-color: #f2f2f2;
+    overflow-y: scroll;
+
+    .xny-user-img {
+        float: left;
+        padding: 12px;
     }
+
+    .xny-user-img img {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+    }
+
+    .xny-item-body {
+        margin-left: 74px;
+    }
+
     header{
-    	background-color: #fff;
+        background-color: #fff;
     }
     .unlogin{
         width: 100%;
@@ -199,11 +215,11 @@
         color: #1d2088;
         line-height: 34px;
     }
-	.xny-info{
-		height: 30px;
-		line-height: 30px;
+    .xny-info{
+        height: 30px;
+        line-height: 30px;
         overflow: hidden;
-	}
+    }
     .xny-info span{
         display: inline-block;
         padding: 0 10px;
@@ -292,4 +308,5 @@
         background-color: #E50110;
         color: #fff;
     }
+}
 </style>
